@@ -9,7 +9,7 @@ public class Reader {
         Scanner in = new Scanner(System.in);
         buf = in.nextLine();
         if(buf.length() <1){
-            return ConsoleReader();
+            return null;
         }
         return buf;
     }
