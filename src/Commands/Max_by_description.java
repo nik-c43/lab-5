@@ -15,20 +15,20 @@ public class Max_by_description implements CommandWithoutArg {
     @Override
     public void execute(Object obj) {
         java.time.LocalDate maxDate = LocalDate.MIN;
-        Dragon dragon=null;
+        Organization organization=null;
         try {
-            for (TreeMap.Entry<Integer, Dragon> entry : collection.getCollection().entrySet())
+            for (TreeMap.Entry<Integer,  Organization> entry : collection.getCollection().entrySet())
                 if (entry.getValue().getCreationDate().compareTo(maxDate)>=0){
-                    dragon= entry.getValue();
+                    organization= entry.getValue();
                     maxDate = dragon.getCreationDate();
                 }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (dragon ==null){
+        if ( organization ==null){
             System.out.println("Объеты коллекции не были найдены.");
         }
-        System.out.println(dragon);
+        System.out.println(organization);
     }
 
     @Override
