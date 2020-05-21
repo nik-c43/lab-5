@@ -2,8 +2,8 @@ package Commands;
 
 import Controller.CommandWithObject;
 import Controller.DragonCollection;
-import  Organization. Organization;
-import Organization. Organizator;
+import  Organization.Organization;
+import Organization.Organizator;
 
 import java.util.InputMismatchException;
 
