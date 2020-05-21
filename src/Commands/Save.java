@@ -14,7 +14,7 @@ public class Save implements CommandWithoutArg {
 
     @Override
     public void execute(Object o) throws FileNotFoundException {
-            WriterToFile.writeDragonToFile(collection.getCollection());
+            WriterToFile.write OrganizationToFile(collection.getCollection());
 
         System.out.println("Коллекция успешно сохранена.");
     }
