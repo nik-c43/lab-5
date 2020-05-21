@@ -1,20 +1,20 @@
 package Commands;
 
 import Controller.CommandWithoutArg;
-import Controller.DragonCollection;
-import Dragon.Dragon;
+import Controller.OrganizationCollection;
+import  Organization.organization;
 
 import java.util.Map;
 
 public class Print_unique implements Commandable {
     String name = "print_unique";
-    DragonCollection collection = new DragonCollection();
+    OrganizationCollection collection = new  OrganizationCollection();
 
     @Override
     public void execute(Object obj) {
-        LinkedHashSet<String> set = new LinkedHashSet();//коллекция не содержит дубликатов
+        LinkedHashMap<String> set = new LinkedHashMap();//коллекция не содержит дубликатов
         try {
-            for (Map.Entry<Integer, Dragon> entry : collection.getCollection().entrySet())
+            for (Map.Entry<Integer,  Organization> entry : collection.getCollection().entrySet())
                 set.add(entry.getValue().getName());
         } catch (Exception e) {
             e.printStackTrace();
