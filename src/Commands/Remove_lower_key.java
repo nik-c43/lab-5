@@ -2,14 +2,14 @@ package Commands;
 
 import Controller.Commandable;
 import Controller.DragonCollection;
-import Dragon.Dragon;
+import Organization.Organization;
 
 import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.TreeMap;
 import java.util.InputMismatchException;
 
 public class Remove_lower_key implements Commandable {
-    DragonCollection collection = new DragonCollection();
+    OrganizationCollection collection = new  OrganizationCollection();
     String name = "remove_lower_key";
 
     @Override
@@ -18,18 +18,18 @@ public class Remove_lower_key implements Commandable {
             boolean tumb = false;
             if (collection.getSize() == 0) System.out.println("Коллекция итак пустая.");
             else {
-                Hashtable<Integer, Dragon> dragons = collection.getCollection();
-                Enumeration keys = dragons.keys();
+                TreeMap<Integer,  Organization>   organization= collection.getCollection();
+                Enumeration keys = organization .keys();
                 while (keys.hasMoreElements()) {
                     Integer k = (Integer) keys.nextElement();
-                    Dragon v = dragons.get(k);
+                    Organization v =  organization.get(k);
                     if (v.getId() < Integer.parseInt((String) arg)) {
                         tumb = true;
                         collection.remove(k);
-                        System.out.println("Дракон с id:[" + k + "] успешно удален.");
+                        System.out.println("Организация с id:[" + k + "] успешно удалена.");
                     }
                 }
-                if (!tumb) System.out.println("Драконов с меньшим id не найдено.");
+                if (!tumb) System.out.println("Организаций с меньшим id не найдено.");
             }
         } catch (InputMismatchException e) {
             e.printStackTrace();
