@@ -35,12 +35,12 @@ public class Execute_script implements Commandable {
                                             i++;
                                             params.add(commands[i]);
                                         }
-                                        Dragonborn.isFromScript = true;
-                                        Dragonborn creater = new Dragonborn();
+                                        Organization.isFromScript = true;
+                                        Organization creater = new  Organization();
                                         creater.createFromFile(params);
                                         System.out.println("\nКоманда \"" + commands[i-11] + "\":");
                                         command.executeCommand(commands[i-11]);
-                                        Dragonborn.isFromScript = false;
+                                        Organization.isFromScript = false;
                                     } catch (IndexOutOfBoundsException e) {
                                         System.out.println("Команда \"" + commandAndName + "\":");
                                         System.out.println("Недостаточно параметров");
