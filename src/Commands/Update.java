@@ -3,13 +3,13 @@ package Commands;
 import Controller.CommandWithObject;
 import Controller.DragonCollection;
 import  Organization.Organization;
-import Organization.Organizator;
+import Organization.OrganizationType;
 
 import java.util.InputMismatchException;
 
 public class Update implements CommandWithObject {
     String name = "update";
-    Organizator creater = new  Organizator();
+    OrganizationType creater = new  OrganizationType();
     OrganizationCollection collection = new OrganizationCollection();
 
     @Override
@@ -44,8 +44,8 @@ public class Update implements CommandWithObject {
 
     @Override
     public Organization getNewOrganization(Object params) {
-        if (Organizator.isFromScript == false) return creater.create();
-        else return Organizator.organizationFromScript;
+        if (OrganizationType.isFromScript == false) return creater.create();
+        else return OrganizationType.organizationFromScript;
     }
 }
 
