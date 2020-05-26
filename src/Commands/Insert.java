@@ -1,16 +1,16 @@
 package Commands;
 
 import Controller.CommandWithObject;
-import Controller.DragonCollection;
-import Dragon.Dragon;
-import Organization.Dragonborn;
+import Controller.OrganizationCollection;
+import Organization.Organization;
+import Organization.OrganizationType;
 
 import java.util.InputMismatchException;
 
 public class Insert implements CommandWithObject {
     String name = "insert";
     OrganizationCollection collection = new OrganizationCollection();
-    Dragonborn creater = new Dragonborn();
+    OrganizationType creater = new OrganizationType();
 
     @Override
     public void execute(Object arg) {
@@ -42,8 +42,8 @@ public class Insert implements CommandWithObject {
 
     @Override
     public Organization getNewOrganization(Object params) {
-        if (Dragonborn.isFromScript == false) return creater.create();
-        else return Dragonborn.OrganizationFromScript;
+        if (OrganizationType.isFromScript == false) return creater.create();
+        else return OrganizationType.OrganizationFromScript;
     }
 }
 
