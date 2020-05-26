@@ -3,13 +3,13 @@ package Commands;
 import Controller.CommandWithObject;
 import Controller.DragonCollection;
 import Dragon.Dragon;
-import Dragon.Dragonborn;
+import Organization.Dragonborn;
 
 import java.util.InputMismatchException;
 
 public class Insert implements CommandWithObject {
     String name = "insert";
-    DragonCollection collection = new DragonCollection();
+    OrganizationCollection collection = new OrganizationCollection();
     Dragonborn creater = new Dragonborn();
 
     @Override
@@ -17,10 +17,10 @@ public class Insert implements CommandWithObject {
         try {
             int id = Integer.parseInt((String) arg);
             if (this.check(id)) {
-                Dragon dragon = this.getNewDragon(null);
-                dragon.setId(id);
-                collection.insert((Integer) id, dragon);
-                System.out.println("Дракон залетел в коллекцию.");
+                Organizationorganization = this.getNewOrganization(null);
+                organization.setId(id);
+                collection.insert((Integer) id, organization);
+                System.out.println(" залетел в коллекцию.");
             } else System.out.println("Указанный ключ занят");
         } catch (NumberFormatException | InputMismatchException e) {
             System.out.println("Аргумент команды должен быть типа \"int\"");
@@ -41,9 +41,9 @@ public class Insert implements CommandWithObject {
     }
 
     @Override
-    public Dragon getNewDragon(Object params) {
+    public Organization getNewOrganization(Object params) {
         if (Dragonborn.isFromScript == false) return creater.create();
-        else return Dragonborn.dragonFromScript;
+        else return Dragonborn.OrganizationFromScript;
     }
 }
 
